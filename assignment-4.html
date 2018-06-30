@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Boom</title>
+        <script
+          src="https://code.jquery.com/jquery-3.3.1.min.js"
+          integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+          crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <h1>Click me to see my name!</h1>
+        <script type="text/javascript">
+        $(document).ready(function(){
+
+            $.get("https://api.github.com/users/3x7r3m157", function(data){
+                var austin = data.name;
+                $( "h1" ).click(function() {
+                  $( this ).replaceWith( "<h1>" + austin + "</h1>" );
+                });
+            });
+
+        });
+        </script>
+    </body>
+</html>
